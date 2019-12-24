@@ -2,6 +2,7 @@ $(document).ready(function(){
     const months = ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December']
     $('.sidenav').sidenav();
     $('select').formSelect();
+    $('.tooltipped').tooltip();
     $('.datepicker').datepicker(options={
         format: 'dd/mm/yyyy',
         firstDay: 1,
