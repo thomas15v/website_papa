@@ -29,11 +29,18 @@ $(document).ready(function(){
         const catalogValue = parseFloat(inputCatalogValue.get());
 
         const fuelType = $('#fuelType').val();
-        const co2 = parseInt(inputco2.get());
+        let co2 = parseInt(inputco2.get());
         let firstRegistrationDate = $('#firstRegistrationDate').val();
         const year = parseInt($('#year').val());
 
-        if (catalogValue && fuelType && co2 && firstRegistrationDate && year){
+        if (fuelType && fuelType == 'electric'){
+            co2 = 0;
+            $('#co2Field').addClass('hiddendiv');
+        } else {
+            $('#co2Field').removeClass('hiddendiv');
+        }
+
+        if (catalogValue && fuelType && Number.isInteger(co2) && firstRegistrationDate && year){
             $("#data").removeClass('hiddendiv');
             $('#tabledata').empty();
             const table = $('#tabledata');
@@ -47,6 +54,11 @@ $(document).ready(function(){
                 table.append("<tr><td>" + month + "</td><td>" + AutoNumeric.format(value, AutoNumeric.getPredefinedOptions().French) + "</td></tr>")
             }
             $('#totalfield').text(AutoNumeric.format(total, AutoNumeric.getPredefinedOptions().French))
+
+            //aftrekbaarheid addon
+            $('#fuelCoefficientDiv').removeClass('hiddendiv');
+            let fuelCoefficient = calculateDeductible(year, fuelType, co2)
+            $('#fuelCoefficient').html("Fiscaal aftrekbaar: " + fuelCoefficient + " %");
         } else {
             $("#data").addClass('hiddendiv');
             $('#tabledata').empty()

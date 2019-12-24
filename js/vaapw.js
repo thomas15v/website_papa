@@ -1,33 +1,80 @@
 const yearConst = {
     2020: {
-        'co2': {
-            'diesel': 91,
-            'benzine': 111,
+        co2: {
+            diesel: 91,
+            benzine: 111,
+            electric: 0,
+            cng: 111
         },
-        'minBenefit': 1340
+        fuelCoefficient: {
+            diesel: 1,
+            benzine: 0.95,
+            cng: 0.90,
+        },
+        minBenefit: 1340
     },
     2019: {
-        'co2': {
-            'diesel': 88,
-            'benzine': 107,
+        co2: {
+            diesel: 88,
+            benzine: 107,
+            electric: 0,
+            cng: 107
         },
-        'minBenefit': 1340
+        minBenefit: 1340
     },
     2018: {
-        'co2': {
-            'diesel': 86,
-            'benzine': 105,
+        co2: {
+            diesel: 86,
+            benzine: 105,
+            electric: 0,
+            cng: 105
         },
-        'minBenefit': 1310
+        minBenefit: 1310
     },
     2017: {
-        'co2': {
-            'diesel': 87,
-            'benzine': 105,
+        co2: {
+            diesel: 87,
+            benzine: 105,
+            electric: 0,
+            cng: 105
         },
-        'minBenefit': 1280
+        minBenefit: 1280
     }
 };
+
+oldfuelCoefficient = {
+    'diesel': {
+        0: 120,
+        60: 100,
+        105: 90,
+        115: 80,
+        145: 75,
+        170: 70,
+        195: 60,
+        999: 50
+    },
+    'benzine': {
+        0: 120,
+        60: 100,
+        105: 90,
+        125: 80,
+        155: 75,
+        180: 70,
+        205: 60,
+        999: 50
+    },
+    'cng': {
+        0: 120,
+        60: 100,
+        105: 90,
+        125: 80,
+        155: 75,
+        180: 70,
+        205: 60,
+        999: 50
+    }
+}
+
 const basisPercentage = 5.5;
 const minPercentage = 4;
 const maxPercentage = 18;
@@ -58,6 +105,14 @@ function roundToTwo(num) {
     return +(Math.round(num + "e+2")  + "e-2");
 }
 
+function getNumberNextTo(array, number) {
+    for(let i = 0; i < array.length; i++) {
+        if (array[i] >= number){
+            return array[i]
+        }
+    }
+}
+
 function calculateBenefitsForMonth(month, year, catalogValue, fuelType, co2Emissions, firstRegistrationDate){
     const co2Percentage = getCo2Percentage(year, fuelType, co2Emissions);
     const correctCatalogValue = getCorrectCatalogValue(month, year, catalogValue, firstRegistrationDate)
@@ -67,11 +122,25 @@ function calculateBenefitsForMonth(month, year, catalogValue, fuelType, co2Emiss
     const dayBenefit = Math.max((co2Percentage * correctCatalogValue * 6/7) / daysInYear , minValue);
 
     if ((month < firstRegistrationDate.getMonth() + 1 && year == firstRegistrationDate.getFullYear()) || year < firstRegistrationDate.getFullYear())
-        return 0
+        return 0;
     if (month == firstRegistrationDate.getMonth() + 1 && year == firstRegistrationDate.getFullYear()) {
-        return dayBenefit * (daysInMonth - firstRegistrationDate.getDate()  + 1)
+        return dayBenefit * (daysInMonth - firstRegistrationDate.getDate()  + 1);
     }
     else {
-        return dayBenefit * daysInMonth
+        return dayBenefit * daysInMonth;
+    }
+}
+
+function calculateDeductible(year, fuelType, co2Emissions) {
+    if (year > 2019){
+        if (fuelType == 'electric') return 100;
+        if (co2Emissions > 200) return 40;
+        return Math.round(Math.max(Math.min(120 - (0.5 * yearConst[year]['fuelCoefficient'][fuelType] * co2Emissions), 100), 50))
+    } else {
+        if (fuelType == 'electric') return 120;
+        const table = oldfuelCoefficient[fuelType];
+        const keys = Object.keys(table);
+        const key = getNumberNextTo(keys, co2Emissions);
+        return table[key];
     }
 }
