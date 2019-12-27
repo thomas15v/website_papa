@@ -19,7 +19,7 @@ $(document).ready(function(){
             weekdaysAbbrev: ['Z', 'M', 'D', 'W', 'D', 'V', 'Z']
         },
     });
-    const inputCatalogValue = new AutoNumeric('#catalogValue', 'euro');
+    const inputCatalogValue = new AutoNumeric('#catalogValue', 'euroPos');
     const inputco2 = new AutoNumeric('#co2', options = {
         maximumValue: 999,
         minimumValue: 0,
