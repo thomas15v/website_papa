@@ -11,7 +11,7 @@ const yearConst = {
             benzine: 0.95,
             cng: 0.90,
         },
-        minBenefit: 1340
+        minBenefit: 1360
     },
      2022: {
         co2: {
@@ -25,7 +25,7 @@ const yearConst = {
             benzine: 0.95,
             cng: 0.90,
         },
-        minBenefit: 1340
+        minBenefit: 1360
     },
     2021: {
         co2: {
@@ -39,7 +39,7 @@ const yearConst = {
             benzine: 0.95,
             cng: 0.90,
         },
-        minBenefit: 1340
+        minBenefit: 1360
     },
     2020: {
         co2: {
@@ -53,7 +53,7 @@ const yearConst = {
             benzine: 0.95,
             cng: 0.90,
         },
-        minBenefit: 1340
+        minBenefit: 1360
     },
     2019: {
         co2: {
