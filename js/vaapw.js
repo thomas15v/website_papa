@@ -1,10 +1,10 @@
 const yearConst = {
      2023: {
         co2: {
-            diesel: 91,
-            benzine: 111,
+            diesel: 84,
+            benzine: 102,
             electric: 0,
-            cng: 111
+            cng: 102
         },
         fuelCoefficient: {
             diesel: 1,
@@ -15,10 +15,10 @@ const yearConst = {
     },
      2022: {
         co2: {
-            diesel: 91,
-            benzine: 111,
+            diesel: 84,
+            benzine: 102,
             electric: 0,
-            cng: 111
+            cng: 102
         },
         fuelCoefficient: {
             diesel: 1,
@@ -29,10 +29,10 @@ const yearConst = {
     },
     2021: {
         co2: {
-            diesel: 91,
-            benzine: 111,
+            diesel: 84,
+            benzine: 102,
             electric: 0,
-            cng: 111
+            cng: 102
         },
         fuelCoefficient: {
             diesel: 1,
