@@ -39,7 +39,7 @@ const yearConst = {
             benzine: 0.95,
             cng: 0.90,
         },
-        minBenefit: 1360
+        minBenefit: 1370
     },
     2020: {
         co2: {
