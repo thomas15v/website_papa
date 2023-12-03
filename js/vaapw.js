@@ -1,31 +1,45 @@
 const yearConst = {
-    2023: {
+    2024: {
         co2: {
-            diesel: 75,
-            benzine: 91,
+            diesel: 67,
+            benzine: 82,
             electric: 0,
-            cng: 102
+            cng: 82
         },
         fuelCoefficient: {
             diesel: 1,
             benzine: 0.95,
             cng: 0.90,
         },
-        minBenefit: 1370
+        minBenefit: 1540
+    },
+    2023: {
+        co2: {
+            diesel: 67,
+            benzine: 82,
+            electric: 0,
+            cng: 82
+        },
+        fuelCoefficient: {
+            diesel: 1,
+            benzine: 0.95,
+            cng: 0.90,
+        },
+        minBenefit: 1540
     },
     2022: {
         co2: {
             diesel: 75,
             benzine: 91,
             electric: 0,
-            cng: 102
+            cng: 91
         },
         fuelCoefficient: {
             diesel: 1,
             benzine: 0.95,
             cng: 0.90,
         },
-        minBenefit: 1370
+        minBenefit: 1400
     },
     2021: {
         co2: {
