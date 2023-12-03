@@ -177,7 +177,7 @@ function calculateDeductible(year, fuelType, co2Emissions) {
     if (year > 2019){
         if (fuelType == 'electric') return 100;
         if (co2Emissions > 200) return 40;
-        return Math.round(Math.max(Math.min(120 - (0.5 * yearConst[year]['fuelCoefficient'][fuelType] * co2Emissions), 100), 50))
+        return (Math.max(Math.min(120 - (0.5 * yearConst[year]['fuelCoefficient'][fuelType] * co2Emissions), 100), 50)).toFixed(1)
     } else {
         if (fuelType == 'electric') return 120;
         const table = oldfuelCoefficient[fuelType];
@@ -228,7 +228,7 @@ if (typeof $ !== 'undefined') {
                 //aftrekbaarheid addon
                 $('#fuelCoefficientDiv').removeClass('hiddendiv');
                 let fuelCoefficient = calculateDeductible(year, fuelType, co2)
-                $('#fuelCoefficient').html("Fiscaal aftrekbaar : " + fuelCoefficient + " %");
+                $('#fuelCoefficient').html(("Fiscaal aftrekbaar : " + fuelCoefficient + " %").replace('.', ','));
             } else {
                 $("#data").addClass('hiddendiv');
                 $('#tabledata').empty()
