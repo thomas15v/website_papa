@@ -10,6 +10,21 @@ const yearConst = {
         index: 1.8492,
         heating: 2060.00,
         electric: 1030
+    },
+    2022: {
+        index: 1.8630,
+        heating: 2080.00,
+        electric: 1030
+    },
+    2023: {
+        index: 1.9084,
+        heating: 2130.00,
+        electric: 1060
+    },
+    2024: {
+        index: 2.0915,
+        heating: 2330.00,
+        electric: 1160
     }
 }
 
