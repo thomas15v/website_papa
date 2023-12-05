@@ -3,7 +3,6 @@ const yearConst = {
         co2: {
             diesel: 67,
             benzine: 82,
-            electric: 0,
             cng: 82
         },
         fuelCoefficient: {
@@ -17,7 +16,6 @@ const yearConst = {
         co2: {
             diesel: 67,
             benzine: 82,
-            electric: 0,
             cng: 82
         },
         fuelCoefficient: {
@@ -31,7 +29,6 @@ const yearConst = {
         co2: {
             diesel: 75,
             benzine: 91,
-            electric: 0,
             cng: 91
         },
         fuelCoefficient: {
@@ -45,7 +42,6 @@ const yearConst = {
         co2: {
             diesel: 84,
             benzine: 102,
-            electric: 0,
             cng: 102
         },
         fuelCoefficient: {
@@ -59,7 +55,6 @@ const yearConst = {
         co2: {
             diesel: 91,
             benzine: 111,
-            electric: 0,
             cng: 111
         },
         fuelCoefficient: {
@@ -73,7 +68,6 @@ const yearConst = {
         co2: {
             diesel: 88,
             benzine: 107,
-            electric: 0,
             cng: 107
         },
         minBenefit: 1340
@@ -82,7 +76,6 @@ const yearConst = {
         co2: {
             diesel: 86,
             benzine: 105,
-            electric: 0,
             cng: 105
         },
         minBenefit: 1310
@@ -91,7 +84,6 @@ const yearConst = {
         co2: {
             diesel: 87,
             benzine: 105,
-            electric: 0,
             cng: 105
         },
         minBenefit: 1280
@@ -149,7 +141,7 @@ function getDaysInYear(year) {
 
 function getCo2Percentage(year, fuelType, co2Emissions){
     if (fuelType === 'electric') { 
-        co2Emissions = 0;
+        return minPercentage / 100;
     }
     return Math.max(Math.min(((co2Emissions - yearConst[year]['co2'][fuelType]) / 10) + basisPercentage, maxPercentage), minPercentage) / 100
 }
