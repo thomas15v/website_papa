@@ -148,6 +148,9 @@ function getDaysInYear(year) {
 }
 
 function getCo2Percentage(year, fuelType, co2Emissions){
+    if (fuelType === 'electric') { 
+        co2Emissions = 0;
+    }
     return Math.max(Math.min(((co2Emissions - yearConst[year]['co2'][fuelType]) / 10) + basisPercentage, maxPercentage), minPercentage) / 100
 }
 
