@@ -1,4 +1,17 @@
 const yearConst = {
+    2025: {
+        co2: {
+            diesel: 59,
+            benzine: 71,
+            cng: 71
+        },
+        fuelCoefficient: {
+            diesel: 1,
+            benzine: 0.95,
+            cng: 0.90,
+        },
+        minBenefit: 1650
+    },
     2024: {
         co2: {
             diesel: 65,
