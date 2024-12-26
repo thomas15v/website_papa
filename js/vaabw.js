@@ -25,6 +25,11 @@ const yearConst = {
         index: 2.0915,
         heating: 2330.00,
         electric: 1160
+  },
+    2025: {
+        index: 2.1763,
+        heating: 2430.00,
+        electric: 1210       
     }
 }
 
