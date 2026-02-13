@@ -280,7 +280,7 @@ if (typeof $ !== 'undefined') {
                 //aftrekbaarheid addon
                 //$('#fuelCoefficientDiv').removeClass('hiddendiv');
                 let fuelCoefficient = calculateDeductible(year, fuelType, co2)
-                $('#fuelCoefficient').html(("Fiscaal aftrekbaar : " + fuelCoefficient + " %").replace('.', ','));
+                //$('#fuelCoefficient').html(("Fiscaal aftrekbaar : " + fuelCoefficient + " %").replace('.', ','));
             } else {
                 $("#data").addClass('hiddendiv');
                 $('#tabledata').empty()
