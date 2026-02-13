@@ -3,11 +3,13 @@ const yearConst = {
         co2: {
             diesel: 58,
             benzine: 70,
+            hybrid: 70,
             cng: 70
         },
         fuelCoefficient: {
             diesel: 1,
             benzine: 0.95,
+            hybrid: 0.95,
             cng: 0.90,
         },
         minBenefit: 1650
@@ -15,12 +17,14 @@ const yearConst = {
     2025: {
         co2: {
             diesel: 59,
+            hybrid: 71,
             benzine: 71,
             cng: 71
         },
         fuelCoefficient: {
             diesel: 1,
             benzine: 0.95,
+            hybrid: 0.95,
             cng: 0.90,
         },
         minBenefit: 1650
@@ -28,12 +32,14 @@ const yearConst = {
     2024: {
         co2: {
             diesel: 65,
+            hybrid: 78,
             benzine: 78,
             cng: 78
         },
         fuelCoefficient: {
             diesel: 1,
             benzine: 0.95,
+            hybrid: 0.95,
             cng: 0.90,
         },
         minBenefit: 1600
@@ -41,11 +47,13 @@ const yearConst = {
     2023: {
         co2: {
             diesel: 67,
+            hybrid: 82,
             benzine: 82,
             cng: 82
         },
         fuelCoefficient: {
             diesel: 1,
+            hybrid: 0.95,
             benzine: 0.95,
             cng: 0.90,
         },
@@ -54,11 +62,13 @@ const yearConst = {
     2022: {
         co2: {
             diesel: 75,
+            hybrid: 91,
             benzine: 91,
             cng: 91
         },
         fuelCoefficient: {
             diesel: 1,
+            hybrid: 0.95,
             benzine: 0.95,
             cng: 0.90,
         },
@@ -67,12 +77,14 @@ const yearConst = {
     2021: {
         co2: {
             diesel: 84,
+            hybrid: 102,
             benzine: 102,
             cng: 102
         },
         fuelCoefficient: {
             diesel: 1,
             benzine: 0.95,
+            hybrid: 0.95,
             cng: 0.90,
         },
         minBenefit: 1370
@@ -80,12 +92,14 @@ const yearConst = {
     2020: {
         co2: {
             diesel: 91,
+            hybrid: 111,
             benzine: 111,
             cng: 111
         },
         fuelCoefficient: {
             diesel: 1,
             benzine: 0.95,
+            hybrid: 0.95,
             cng: 0.90,
         },
         minBenefit: 1360
@@ -93,6 +107,7 @@ const yearConst = {
     2019: {
         co2: {
             diesel: 88,
+            hybrid: 107,
             benzine: 107,
             cng: 107
         },
@@ -101,6 +116,7 @@ const yearConst = {
     2018: {
         co2: {
             diesel: 86,
+            hybrid: 105,
             benzine: 105,
             cng: 105
         },
@@ -109,6 +125,7 @@ const yearConst = {
     2017: {
         co2: {
             diesel: 87,
+            hybrid: 105,
             benzine: 105,
             cng: 105
         },
