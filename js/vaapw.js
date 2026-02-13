@@ -278,7 +278,7 @@ if (typeof $ !== 'undefined') {
                 $('#totalfield').text(AutoNumeric.format(total, AutoNumeric.getPredefinedOptions().French))
 
                 //aftrekbaarheid addon
-                $('#fuelCoefficientDiv').removeClass('hiddendiv');
+                //$('#fuelCoefficientDiv').removeClass('hiddendiv');
                 let fuelCoefficient = calculateDeductible(year, fuelType, co2)
                 $('#fuelCoefficient').html(("Fiscaal aftrekbaar : " + fuelCoefficient + " %").replace('.', ','));
             } else {
